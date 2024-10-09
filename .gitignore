@@ -1,0 +1,23 @@
+# Ambiente virtual
+venv_conversor/
+
+# Compilação Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Arquivos de log
+*.log
+
+# Dados sensíveis
+*.env
+
+# Configurações do IDE
+.idea/
+.vscode/
+*.swp
+
+# Arquivos gerados
+*.csv
+*.xls
