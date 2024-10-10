@@ -1,5 +1,7 @@
-pandas==2.2.3
-numpy == 2.1.2
-rdflib==6.2.0
-OWLready2==0.42
-matplotlib==3.9.2
+pandas
+numpy
+rdflib
+OWLready2
+matplotlib
+scikit-learn
+scipy
