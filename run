@@ -4,4 +4,4 @@
 source venv_conversor/bin/activate
 
 # Executa o script Python
-python3 src/testPanda.py
+python3 src/main.py
