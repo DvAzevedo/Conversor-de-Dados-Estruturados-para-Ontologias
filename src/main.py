@@ -1,39 +1,33 @@
-
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from utils.data_loader import load_data
+from mappers.semantic_mapper import infer_mapping
+from ontology.ontology_generator import generate_ontology
+from sklearn.preprocessing import LabelEncoder
+from sklearn.cluster import KMeans
 
+sourceType = 'csv'
+sourcePath = 'data/MentalHealthSurvey.csv'
+# sourcePath = 'data/social-media.csv'
 
-# 1. Carregar os CSVs
-data = pd.read_csv('data/gym_members_exercise_tracking.csv')
-data1 = pd.read_csv('data/MentalHealthSurvey.csv')
+def pipeline(source_type, source_path):
+    # Carregar os dados
+    data = load_data(source_type, source_path)
 
-# 2. Separar colunas numéricas e textuais
-colunas_numericas = data.select_dtypes(include=['number']).columns
-colunas_textuais = data.select_dtypes(include=['object']).columns
+    # print(data.dtypes)
+    # transposed_data = data.T
+    # print(transposed_data.dtypes)
+    # column_features = transposed_data.apply(LabelEncoder().fit_transform).T
+    # print(column_features.dtypes)
 
-print("Colunas numéricas:", colunas_numericas)
-print("Colunas textuais:", colunas_textuais)
+    
+    # Inferir mapeamentos semânticos
+    mappings = infer_mapping(data)
+    
+    # Gerar ontologia OWL
+    generate_ontology(data, mappings)
+    
+    print("Ontologia gerada com sucesso!")
 
-# 3. Aplicar One-Hot Encoding às colunas textuais
-data_encoded = pd.get_dummies(data, columns=colunas_textuais)
-
-# 4. Calcular e exibir a melhor correlação entre todas as colunas numéricas
-resultado_correlacoes = {}
-
-# 6. Calcular correlação entre todas as colunas (numéricas e codificadas)
-correlacoes = data_encoded.corr(method="kendall")
-
-# 7. Exibir o gráfico de correlação com os nomes das colunas
-plt.figure(figsize=(30, 24))  # Ajustar o tamanho do gráfico para caber os rótulos
-plt.matshow(correlacoes, fignum=1)  # Usar fignum=1 para integrar ao plt.figure
-
-# Adicionar rótulos de colunas e linhas
-plt.xticks(ticks=np.arange(correlacoes.shape[1]), labels=correlacoes.columns, rotation=90)
-plt.yticks(ticks=np.arange(correlacoes.shape[0]), labels=correlacoes.index)
-
-# Exibir barra de cores
-plt.colorbar()
-
-plt.show()
+pipeline(sourceType, sourcePath)
