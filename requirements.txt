@@ -5,3 +5,5 @@ OWLready2
 matplotlib
 scikit-learn
 scipy
+kaggle
+kagglehub
