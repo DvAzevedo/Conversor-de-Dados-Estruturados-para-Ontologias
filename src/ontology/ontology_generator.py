@@ -1,6 +1,6 @@
 from owlready2 import *
 
-def generate_ontology(data, mappings):
+def generate_ontology(data, mappings, name):
     # Criar a ontologia
     onto = get_ontology("http://example.org/general_ontology.owl")
     
@@ -31,4 +31,4 @@ def generate_ontology(data, mappings):
                 setattr(instance, prop, row[prop])
     
     # Salvar a ontologia em um arquivo OWL
-    onto.save(file="mental_ontology.owl")
+    onto.save(file=f"{name}.owl")
