@@ -31,3 +31,53 @@ Funcionalidades
     Geração de ontologias OWL: exporta os dados convertidos em um arquivo OWL, que pode ser visualizado em ferramentas como Protégé.
     Interface gráfica: permite ao usuário fazer o upload dos arquivos e gerar a ontologia de forma simples e intuitiva.
     Clusterização para mapeamento semântico: utiliza algoritmos de clustering, como KMeans, para agrupar e definir classes e propriedades com base nos padrões dos dados.
+
+
+Instalação
+
+    Clone este repositório:
+
+git clone https://github.com/DvAzevedo/Conversor-de-Dados-Estruturados-para-Ontologias.git
+
+Crie um ambiente virtual e ative-o:
+
+bash
+
+python3 -m venv venv_conversor
+source venv_conversor/bin/activate  
+
+Instale as dependência:
+    python3 setup.py
+
+Execute:
+    ./run
+
+Próximos Passos
+    Correção de bugs.
+    Aplicação de testes.
+    Documentação.
+    Treinamento contínuo: melhorar a capacidade de inferência semântica usando técnicas de aprendizado de máquina supervisionado.
+    Visualização: adicionar uma visualização gráfica da ontologia gerada diretamente na interface.
+    Suporte a mais formatos além do CSV.
+
+2. Crie um ambiente virtual e ative-o:
+```bash
+python3 -m venv venv_conversor
+source venv_conversor/bin/activate  
+
+3. Instale as dependências:
+```bash
+python3 setup.py
+
+4. Execute:
+```bash
+./run
+
+## Próximos Passos
+
+- Correção de bugs.
+- Aplicação de testes.
+- Documentação.
+- Treinamento contínuo: melhorar a capacidade de inferência semântica usando técnicas de aprendizado de máquina supervisionado.
+- Visualização: adicionar uma visualização gráfica da ontologia gerada diretamente na interface.
+- Suporte a mais formatos além do CSV.
