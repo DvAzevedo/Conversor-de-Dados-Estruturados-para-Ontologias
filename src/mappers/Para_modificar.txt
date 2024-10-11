@@ -1,0 +1,26 @@
+É necessário:
+
+Identificar Linhas Problemáticas:
+Um loop pelas linhas do DataFrame e aplicando o tratamento de exceções
+
+EX: 
+    for index, row in data.iterrows():
+        try:
+            # Processar cada linha como você fez antes
+            for cls in mappings['classes']:
+                instance = globals()[cls](row[cls])  # Pode lançar erro se `cls` não existir
+                for prop in mappings['properties']:
+                    setattr(instance, prop, row[prop])
+        except Exception as e:
+            print(f"Erro na linha {index}: {e}")  # Registra a linha que causou o erro
+
+Verificar Valores Específicos:
+pode incluir valores nulos, strings vazias ou caracteres especiais que não são esperados.
+    print(data.loc[index]) 
+
+Limpar ou Remover Linhas Problemáticas:
+    Remover Linhas Problemáticas:
+        data_cleaned = data.drop(indexes_problematicos)  # Onde `indexes_problematicos` é uma lista de índices problemáticos
+
+    Substituir Valores Inválidos:
+        data.fillna('', inplace=True)  # Substitui valores nulos por strings vazias

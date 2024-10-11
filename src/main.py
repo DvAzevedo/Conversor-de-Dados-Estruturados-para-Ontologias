@@ -9,6 +9,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.cluster import KMeans
 
 path = 'data/games.csv'
+apath = 'data/user_behavior_dataset.csv'
+apath = 'data/gym_members_exercise_tracking.csv'
 
 
 def pipeline(path, table_name=None):
@@ -18,7 +20,7 @@ def pipeline(path, table_name=None):
     data = load_data(source_type, path, table_name)
     
     # Inferir mapeamentos semânticos
-    mappings = infer_mapping(data)
+    mappings = infer_mapping(data.sample(n=10))
     
     # Gerar ontologia OWL
     generate_ontology(data, mappings, name)
