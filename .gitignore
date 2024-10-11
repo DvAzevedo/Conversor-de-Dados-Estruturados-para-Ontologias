@@ -21,6 +21,6 @@ __pycache__/
 # Arquivos gerados
 *.complete
 *.json
-*.csv
+#*.csv
 *.xls
 *.owl
