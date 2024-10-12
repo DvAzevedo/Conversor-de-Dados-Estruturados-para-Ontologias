@@ -2,7 +2,7 @@
 
 ## Descrição
 
-O **Conversor de Banco de Dados para Ontologias Automático** é uma ferramenta desenvolvida para converter dados estruturados no formato `.csv` em ontologias OWL. O processo de conversão utiliza técnicas de machine learning, como clustering, para inferir automaticamente as classes, propriedades e relações entre os dados. O objetivo é simplificar a integração de dados heterogêneos em aplicações baseadas em ontologias, promovendo interoperabilidade semântica entre sistemas.
+O **Conversor de Banco de Dados para Ontologias Automático** é uma ferramenta desenvolvida para converter dados estruturados no formato `.csv` em ontologias OWL. O processo de conversão utiliza técnicas de machine learning, como clustering, para inferir automaticamente as classes, propriedades e relações entre os dados.
 
 ## Funcionalidades
 
