@@ -1,4 +1,4 @@
-# Conversor de Banco de Dados para Ontologias Automático (usando Clustering)
+# Conversor de Banco de Dados para RDF Automático (usando Clustering)
 
 ## Descrição
 
